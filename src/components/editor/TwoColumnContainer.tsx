@@ -155,8 +155,6 @@ export function TwoColumnContainer({
                                                     child.id
                                                 )
                                             }
-                                            parentId={id}
-                                            column="left"
                                         />
                                     )
                                 )}
@@ -225,8 +223,6 @@ export function TwoColumnContainer({
                                                     child.id
                                                 )
                                             }
-                                            parentId={id}
-                                            column="right"
                                         />
                                     )
                                 )}
@@ -257,8 +253,6 @@ function NestedComponentCard({
     selected,
     onClick,
     onDelete,
-    parentId,
-    column,
 }: {
     id: string;
     type: string;
@@ -266,8 +260,6 @@ function NestedComponentCard({
     selected: boolean;
     onClick: () => void;
     onDelete: () => void;
-    parentId: string;
-    column: "left" | "right";
 }) {
     const {
         attributes,

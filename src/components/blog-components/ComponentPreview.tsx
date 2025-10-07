@@ -5,6 +5,7 @@ export function ComponentPreview({
     content,
 }: {
     type: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     content: any;
 }) {
     switch (type) {
@@ -98,6 +99,7 @@ export function ComponentPreview({
         case "image":
             return (
                 <figure>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                         src={content.src}
                         alt={content.alt || ""}
@@ -113,6 +115,7 @@ export function ComponentPreview({
         case "product-card":
             return (
                 <div className="grid grid-cols-1 sm:grid-cols-[160px_1fr] gap-4 items-start">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                         src={content.image}
                         alt={content.title || "Product"}
