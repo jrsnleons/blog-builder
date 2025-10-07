@@ -1,11 +1,17 @@
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
+"use client";
+
+import { EditorLayout } from "@/components/editor/EditorLayout";
+import { Toolbar } from "@/components/editor/Toolbar";
+import { BlogPreview } from "@/components/preview/BlogPreview";
+import { useBlogBuilderStore } from "@/stores/builder/blogBuilderStore";
 
 export default function Home() {
+    const isPreviewMode = useBlogBuilderStore((s) => s.isPreviewMode);
+
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen py-2">
-            <h1 className="text-3xl font-bold underline">Hello, Next.js!</h1>
-            <Button variant="primary">Click Me</Button>
+        <div className="h-screen flex flex-col overflow-hidden">
+            <Toolbar />
+            {isPreviewMode ? <BlogPreview /> : <EditorLayout />}
         </div>
     );
 }
